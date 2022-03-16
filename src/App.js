@@ -43,12 +43,11 @@ function App() {
     setText(e.target.value);
 
     if (text !== "") {
-      const filteredQuestions = questions.filter((question) => {
-        return question.toLowerCase().includes(text.toLowerCase());
-      });
-      setSource(filteredQuestions);
-    } else {
-      setSource(questions);
+      setSource(
+        questions.filter((question) => {
+          return question.toLowerCase().includes(text.toLowerCase());
+        })
+      );
     }
   };
 
@@ -75,8 +74,8 @@ function App() {
           showTargetControls={true}
           sourceHeader="Soru Listesi"
           targetHeader="Seçili Soru Listesi"
-          sourceStyle={{ height: "342px" }}
-          targetStyle={{ height: "342px" }}
+          sourceStyle={{ height: "342px", width: "320px" }}
+          targetStyle={{ height: "342px", width: "320px" }}
         />
       </header>
     </div>
